@@ -24,4 +24,5 @@ EXPOSE 8080
 # USER appuser
 
 # start PocketBase
+CMD [ "ls -al" ]
 CMD ["/pb/pocketbase", "serve", "--http=0.0.0.0:8080"]
