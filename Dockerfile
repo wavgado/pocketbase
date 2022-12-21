@@ -1,16 +1,17 @@
 
+USER appuser
+
 FROM alpine:latest
 
 ARG PB_VERSION=0.10.2
 
-RUN groupadd -g 1000 appuser
-RUN useradd -r -u 1000 -g appuser appuser
-
-USER appuser
 
 RUN apk add --no-cache \
     unzip \
     ca-certificates
+    
+RUN addgroup -g 1000 appuser
+RUN adduser -u 1000 -g appuser appuser
 
 # download and unzip PocketBase
 ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
