@@ -1,11 +1,11 @@
-RUN addgroup --system --gid 1000 worker
-RUN adduser --system --uid 1000 --ingroup worker --disabled-password worker
-USER worker:worker
 
 FROM alpine:latest
 
 ARG PB_VERSION=0.10.2
 
+# RUN addgroup --system --gid 1000 worker
+# RUN adduser --system --uid 1000 --ingroup worker --disabled-password worker
+# USER worker:worker
 RUN apk add --no-cache \
     unzip \
     ca-certificates
