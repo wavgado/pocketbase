@@ -9,8 +9,8 @@ RUN apk add --no-cache \
     unzip \
     ca-certificates
     
-RUN addgroup -g 1000 appuser
-RUN adduser -u 1000 -g appuser appuser
+RUN addgroup -g 1000 appgroup
+RUN adduser -u 1000 -g appgroup appuser
 USER appuser
 
 # download and unzip PocketBase
