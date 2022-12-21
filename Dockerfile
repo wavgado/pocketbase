@@ -12,7 +12,7 @@ ARG PB_VERSION=0.10.2
 # USER appuser
 
 RUN addgroup appgroup -g 1000 
-EUN adduser appuser -G appgroup -u 1000 --disabled-password
+RUN adduser appuser -G appgroup -u 1000 --disabled-password
 USER appuser
 
 # download and unzip PocketBase
