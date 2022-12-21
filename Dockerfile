@@ -3,13 +3,6 @@ FROM alpine:latest
 
 ARG PB_VERSION=0.10.2
 
-ARG UID=1000
-ARG GID=1000
-
-RUN groupadd -g "${GID}" python \
-  && useradd --create-home --no-log-init -u "${UID}" -g "${GID}" python
-WORKDIR /pb
-
 RUN apk add --no-cache \
     unzip \
     ca-certificates
