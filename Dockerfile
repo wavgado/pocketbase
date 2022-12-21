@@ -2,17 +2,16 @@ FROM alpine:latest
 
 ARG PB_VERSION=0.10.2
 
-
-# RUN apk add --no-cache \
-#     unzip \
-#     ca-certificates
+RUN apk add --no-cache \
+    unzip \
+    ca-certificates
 
 # RUN addgroup -g 1000 appgroup
 # RUN adduser -u 1000 -g appgroup appuser
 # USER appuser
 
-RUN addgroup appgroup -g 0 
-RUN adduser appuser -G appgroup -u 0 --disabled-password
+RUN addgroup appgroup -g 1000 
+RUN adduser appuser -G appgroup -u 1000 --disabled-password
 USER appuser
 
 # download and unzip PocketBase
