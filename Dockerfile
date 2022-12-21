@@ -11,7 +11,7 @@ ARG PB_VERSION=0.10.2
 # RUN adduser -u 1000 -g appgroup appuser
 # USER appuser
 
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+RUN addgroup -S appgroup -g 1000 && adduser -S appuser -G appgroup -u 1000
 USER appuser
 
 # download and unzip PocketBase
