@@ -18,8 +18,8 @@ RUN unzip /tmp/pb.zip -d /pb/
 
 EXPOSE 8080
 
-RUN addgroup appgroup -g 1000 
-RUN adduser appuser -G appgroup -u 1000 --disabled-password
+RUN addgroup appgroup -g 0 
+RUN adduser appuser -G appgroup -u 0 --disabled-password
 USER appuser
 
 # start PocketBase
