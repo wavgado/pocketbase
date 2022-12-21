@@ -3,6 +3,11 @@ FROM alpine:latest
 
 ARG PB_VERSION=0.10.2
 
+RUN groupadd -g 1000 appuser
+RUN useradd -r -u 1000 -g appuser appuser
+
+USER appuser
+
 RUN apk add --no-cache \
     unzip \
     ca-certificates
@@ -14,4 +19,4 @@ RUN unzip /tmp/pb.zip -d /pb/
 EXPOSE 8080
 
 # start PocketBase
-CMD ["pocketbase", "serve", "--http=0.0.0.0:8080"]
+CMD ["/pb/pocketbase", "serve", "--http=0.0.0.0:8080"]
