@@ -1,5 +1,4 @@
 
-USER appuser
 
 FROM alpine:latest
 
@@ -12,6 +11,7 @@ RUN apk add --no-cache \
     
 RUN addgroup -g 1000 appuser
 RUN adduser -u 1000 -g appuser appuser
+USER appuser
 
 # download and unzip PocketBase
 ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
