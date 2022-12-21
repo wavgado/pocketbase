@@ -14,8 +14,8 @@ RUN apk add --no-cache \
 
 # download and unzip PocketBase
 ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
-RUN chmod +x ./pocketbase
 RUN unzip /tmp/pb.zip -d /pb/
+RUN chmod +x /pb/pocketbase
 
 EXPOSE 8080
 
