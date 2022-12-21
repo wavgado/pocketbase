@@ -1,0 +1,11 @@
+{
+  "name": "pocketbase",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/wavgado/pocketbase.git",
+  "author": "wavgado <wavgado@gmail.com>",
+  "scripts": {
+    "start": "./pocketbase"
+  },
+  "license": "MIT"
+}
