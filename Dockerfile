@@ -15,13 +15,13 @@ RUN apk add --no-cache \
 # download and unzip PocketBase
 ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
 RUN unzip /tmp/pb.zip -d /pb/
-RUN chmod +x /pb/pocketbase
+RUN chmod 777  /pb/pocketbase
 
 EXPOSE 8080
 
-RUN addgroup -S appgroup -g 1000
-RUN adduser -S appuser -G appgroup -u 1000 -D
-USER appuser
+# RUN addgroup -S appgroup -g 1000
+# RUN adduser -S appuser -G appgroup -u 1000 -D
+# USER appuser
 
 # start PocketBase
 CMD ["/pb/pocketbase", "serve", "--http=0.0.0.0:8080"]
