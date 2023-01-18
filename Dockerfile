@@ -1,8 +1,8 @@
 FROM alpine:latest
 
-ARG PB_VERSION=0.11.1
+ARG PB_VERSION=0.11.2
 
-RUN apk add --no-cache 2
+RUN apk add --no-cache
     unzip \
     ca-certificates
 
